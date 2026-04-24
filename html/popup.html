@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture par syllabes</title>
+    <link rel="stylesheet" href="../css/popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🦎</div>
+            <h1>CaméléMots</h1>
+        </div>
+        <div class="setting-item">
+            <span>Activer l'extension</span>
+            <label class="switch">
+                <input type="checkbox" id="toggleExtension" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>Mode de lecture</span>
+            <select id="readingMode">
+                <option value="syllables">Par syllabes</option>
+                <option value="segments">Par phrases</option>
+            </select>
+        </div>
+        <div class="setting-item color-picker-container">
+            <span>Couleur d'accent</span>
+            <div class="color-options" id="colorOptions">
+                <div class="color-dot active" data-color="#E67E22" style="background-color: #E67E22;"></div>
+                <div class="color-dot" data-color="#FF6B6B" style="background-color: #FF6B6B;"></div>
+                <div class="color-dot" data-color="#48BB78" style="background-color: #48BB78;"></div>
+                <div class="color-dot" data-color="#4299E1" style="background-color: #4299E1;"></div>
+                <div class="color-dot" data-color="#9F7AEA" style="background-color: #9F7AEA;"></div>
+                <div class="color-dot" data-color="#ED64A6" style="background-color: #ED64A6;"></div>
+                <div class="color-dot" data-color="#38B2AC" style="background-color: #38B2AC;"></div>
+            </div>
+        </div>
+        <p class="info">La page s'actualisera automatiquement pour appliquer les changements.</p>
+    </div>
+    <script src="../js/popup.js"></script>
+</body>
+</html>
