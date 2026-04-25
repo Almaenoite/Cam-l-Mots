@@ -1,4 +1,29 @@
 // content.js
+function handleMessage(request, sender, sendResponse) {
+    if (request.action === "updateSettings") {
+        chrome.storage.sync.get({ 
+            isEnabled: true, 
+            readingMode: 'syllables',
+            accentColor: '#E67E22' 
+        }, (data) => {
+            if (data.isEnabled) {
+                currentReadingMode = data.readingMode;
+                color2 = data.accentColor;
+                runAll();
+            } else {
+                removeColorization();
+            }
+        });
+    }
+}
+
+if (window.cameleMotsLoaded) {
+    // Déjà chargé, rien à faire de plus ici, le listener est déjà actif
+} else {
+    window.cameleMotsLoaded = true;
+    chrome.runtime.onMessage.addListener(handleMessage);
+
+
 const color1 = "#2C3E50";
 let color2 = "#E67E22";
 
@@ -370,7 +395,20 @@ function initObserver() {
     }
 }
 
+function removeColorization() {
+    if (observer) observer.disconnect();
+    const elements = document.querySelectorAll('[data-syllable]');
+    elements.forEach(el => {
+        const text = el.textContent;
+        const textNode = document.createTextNode(text);
+        el.parentNode.replaceChild(textNode, el);
+    });
+    // Fusionner les noeuds texte adjacents
+    document.body.normalize();
+}
+
 function runAll() {
+
     if (observer) observer.disconnect();
     
     // Lancement initial sur toute la page
@@ -403,3 +441,5 @@ if (document.readyState === 'loading') {
 } else {
     initExtension();
 }
+}
+

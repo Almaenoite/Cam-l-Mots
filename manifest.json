@@ -2,10 +2,11 @@
   "manifest_version": 3,
   "name": "CaméléMots",
   "version": "1.0",
-  "description": "Colore les syllabes des mots en alternant deux couleurs (#2C3E50 et #E67E22) pour faciliter la lecture.",
+  "description": "Colore les syllabes des mots en alternant deux couleurs pour faciliter la lecture.",
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
   "icons": {
     "16": "icons/icon16.png",
@@ -19,11 +20,5 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["js/content.js"]
-    }
-  ]
+  }
 }

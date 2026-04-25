@@ -32,15 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 accentColor: colorToSave
             }, () => {
                 document.documentElement.style.setProperty('--accent-color', colorToSave);
-                // Recharger l'onglet actif pour appliquer ou retirer l'effet
+                
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                     if (tabs[0]) {
-                        chrome.tabs.reload(tabs[0].id);
+                        // On injecte le script (s'il n'est pas déjà là) et on envoie le message de mise à jour
+                        chrome.scripting.executeScript({
+                            target: { tabId: tabs[0].id },
+                            files: ['js/content.js']
+                        }, () => {
+                            // Petit délai pour laisser le script s'initialiser s'il vient d'être injecté
+                            setTimeout(() => {
+                                chrome.tabs.sendMessage(tabs[0].id, { action: "updateSettings" }).catch(() => {
+                                    // Ignorer l'erreur si le script n'est pas encore prêt
+                                });
+                            }, 100);
+                        });
                     }
                 });
             });
         });
     }
+
 
     // Écouter les changements
     toggle.addEventListener('change', () => saveAndReload());
@@ -54,4 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             saveAndReload(dot.dataset.color);
         });
     });
+
+    // Optionnel : Déclencher l'injection dès l'ouverture de la popup si l'extension est activée
+    chrome.storage.sync.get({ isEnabled: true }, (data) => {
+        if (data.isEnabled) {
+            saveAndReload();
+        }
+    });
 });
+

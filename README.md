@@ -1,8 +1,8 @@
-#  CaméléMots - Extension pour aider les enfants à lire
+# CaméléMots - Extension pour aider les enfants à lire
 
-**CaméléMots** est un outil simple (une extension pour votre navigateur web) conçu pour accompagner les enfants dans leur apprentissage de la lecture. En un clic, elle transforme le texte des pages internet pour le rendre beaucoup plus facile à déchiffrer. C'est l'outil idéal pour les enfants au CP/CE1, les élèves dyslexiques, ou tout enfant ayant besoin d'un coup de pouce visuel !
+**CaméléMots** est un outil simple (une extension pour votre navigateur web) conçu pour accompagner les enfants dans leur apprentissage de la lecture. En un clic, elle transforme le texte des pages internet pour le rendre beaucoup plus facile à déchiffrer. C'est l'outil idéal pour les enfants du CP au CM2, les élèves dyslexiques, ou tout enfant ayant besoin d'un coup de pouce visuel !
 
-##  Pourquoi utiliser cette extension ?
+## Pourquoi utiliser cette extension ?
 
 *    **Deux modes de lecture au choix** : 
     *   *Syllabe par syllabe* : Les mots sont découpés en syllabes alternant deux couleurs (bleu et orange). Idéal pour débuter et ne plus se perdre au milieu du mot.
@@ -29,7 +29,17 @@ Pour le moment, l'extension s'installe manuellement. C'est très rapide, voici l
 3. En haut à droite de cette page, allumez l'interrupteur **"Mode développeur"**.
 4. En haut à gauche, un nouveau bouton apparaît : **"Charger l'extension non empaquetée"**. Cliquez dessus.
 5. Sélectionnez le dossier de l'extension que vous avez téléchargé.
-6. C'est fait ! L'extension est activée. Allez sur un site web (comme une histoire en ligne ou un article documentaire pour enfants) et regardez le texte s'adapter automatiquement !
+6. C'est fait ! L'extension est installée. Pour l'activer sur une page, cliquez sur l'icône du petit caméléon 🦎 dans votre barre d'outils.
+
+##  Comment l'utiliser ?
+
+L'extension ne s'active que sur les pages où vous en avez besoin, pour respecter votre navigation. Voici la marche à suivre :
+
+1. **Allez sur le site** que vous souhaitez lire (une histoire, un article, etc.).
+2. **Cliquez sur l'icône** de l'extension (le petit caméléon 🦎) en haut à droite de votre navigateur.
+    * *Astuce : Cliquez sur l'icône "Puzzle" et épinglez CaméléMots pour qu'il soit toujours visible !*
+3. **L'effet s'applique immédiatement** sur la page ouverte.
+4. **Si vous voulez changer les couleurs** ou le mode de lecture, changez les réglages dans la petite fenêtre : le texte s'ajustera instantanément.
 
 ##  Idées d'utilisation
 
